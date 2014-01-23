@@ -24,7 +24,7 @@
 	<head>
  <title>ProjectnNl</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "jquery.min.js","jquery-ui-1.10.2.custom.min.js","bootstrap.min.js","jquery.blockUI.js","jquery.icheck.min.js","jquery.mousewheel.js","perfect-scrollbar.js","less-1.5.0.min.js","jquery.cookie.js","bootstrap-colorpalette.js","main.js" %>
+  <%= javascript_include_tag "defaults","jquery.min.js","jquery-ui-1.10.2.custom.min.js","bootstrap.min.js","jquery.blockUI.js","jquery.icheck.min.js","jquery.mousewheel.js","perfect-scrollbar.js","less-1.5.0.min.js","jquery.cookie.js","bootstrap-colorpalette.js","main.js" %>
    
   
   
@@ -382,7 +382,8 @@
 						<li class="dropdown current-user">
 							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
 								<img src="assets/images/avatar-1-small.jpg" class="circle-img" alt="">
-								<span class="username">Peter Clark</span>
+                
+								<span class="username"><%= current_user.email %></span>
 								<i class="clip-chevron-down"></i>
 							</a>
 							<ul class="dropdown-menu">
@@ -409,10 +410,8 @@
 										&nbsp;Lock Screen </a>
 								</li>
 								<li>
-									<a href="login_example1.html">
-										<i class="clip-exit"></i>
-										&nbsp;Log Out
-									</a>
+									<%= link_to '<i class="clip-exit"></i> Sign out'.html_safe, destroy_user_session_path, :method => :delete %>
+																	
 								</li>
 							</ul>
 						</li>
@@ -1016,6 +1015,8 @@
 									<h2>Manage Users</h2>
 								</div>
 								<div class="content">
+                  <p class="notice"><%= notice %></p>                                                                                                                                                        
+                  <p class="alert"><%= alert %></p> 
                   <%= yield %>
 									Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
 								</div>

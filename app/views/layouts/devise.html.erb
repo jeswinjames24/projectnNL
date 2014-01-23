@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<!-- Template Name: Clip-One - Responsive Admin Template build with Twitter Bootstrap 3 Version: 1.0 Author: ClipTheme -->
+<!--[if IE 8]><html class="ie8 no-js" lang="en"><![endif]-->
+<!--[if IE 9]><html class="ie9 no-js" lang="en"><![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+	<!--<![endif]-->
+	<!-- start: HEAD -->
+	<head>
+ <title>ProjectnNl</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "jquery.min.js","jquery-ui-1.10.2.custom.min.js","bootstrap.min.js","jquery.blockUI.js","jquery.icheck.min.js","jquery.mousewheel.js","perfect-scrollbar.js","less-1.5.0.min.js","jquery.cookie.js","bootstrap-colorpalette.js","main.js","login.js" %>
+   
+  
+  </head>
+ <body class="login example2">
+   
+    <%= yield %>
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<!-- end: HEAD -->
+	<!-- start: BODY -->
+	
+		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		<script>
+			jQuery(document).ready(function() {
+				Main.init();
+				Login.init();
+			});
+		</script>
+	</body>
+</html>
