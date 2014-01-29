@@ -5,9 +5,9 @@
 	.layout-boxed > .navbar, .layout-boxed .main-container, .layout-boxed > .footer {
 		max-width: 940px !important;
 	}
-	.layout-boxed > .navbar, .layout-boxed > .footer{
-		left:50% !important;
-		margin-left:-470px !important;
+	.layout-boxed > .navbar, .layout-boxed > .footer {
+		left: 50% !important;
+		margin-left: -470px !important;
 	}
 }
 /* ---------------------------------------------------------------------- */
@@ -17,9 +17,9 @@
 	.layout-boxed > .navbar, .layout-boxed .main-container, .layout-boxed > .footer {
 		max-width: 1000px !important;
 	}
-	.layout-boxed > .navbar, .layout-boxed > .footer{
-		left:50% !important;
-		margin-left:-500px !important;
+	.layout-boxed > .navbar, .layout-boxed > .footer {
+		left: 50% !important;
+		margin-left: -500px !important;
 	}
 }
 
@@ -30,9 +30,9 @@
 	.layout-boxed > .navbar, .layout-boxed .main-container, .layout-boxed > .footer {
 		max-width: 750px !important;
 	}
-	.layout-boxed > .navbar, .layout-boxed > .footer{
-		left:50% !important;
-		margin-left:-375px !important;
+	.layout-boxed > .navbar, .layout-boxed > .footer {
+		left: 50% !important;
+		margin-left: -375px !important;
 	}
 	.main-content {
 		margin-left: 35px !important;
@@ -79,7 +79,6 @@
 		width: 225px;
 		position: relative;
 	}
-
 	ul.main-navigation-menu > li:hover .selected {
 		display: none;
 	}
@@ -151,7 +150,6 @@
 	}
 	.header-default .navbar {
 		position: relative !important;
-		overflow: hidden;
 	}
 	.main-container {
 		margin-top: 95px;
@@ -168,14 +166,13 @@
 	 Dropdown and dropdown elements.
 	 ***/
 	.nav > li > .dropdown-menu.notifications {
-		left: -91px !important;
+		left: -110px !important;
 	}
-
 	.nav > li > .dropdown-menu.posts {
-		left: -140px !important;
+		left: -160px !important;
 	}
 	.nav > li > .dropdown-menu.todo {
-		left: -45px !important;
+		left: -60px !important;
 	}
 	.nav > li.current-user > .dropdown-menu {
 		right: 0 !important;
@@ -186,6 +183,15 @@
 	 ***/
 	.navigation-toggler {
 		display: none;
+	}
+	/***
+	 Horizontal menu 
+	 ***/
+	.horizontal-menu ul.nav li.current .selected, .horizontal-menu ul.nav li.active .selected {
+		display: none;
+	}
+	.horizontal-menu .dropdown-submenu > a:after {
+	    content: "\f107";
 	}
 	/***
 	 Main title small text
@@ -206,7 +212,6 @@
 		position: static !important;
 		height: auto !important;
 		top: 0;
-		overflow-y: visible;
 		max-height: none;
 		margin-top: -1px;
 	}
@@ -311,11 +316,11 @@
 		position: relative;
 	}
 	/*Easy Pie Chart*/
-	.easy-pie-chart{
-		padding:10px 0;
+	.easy-pie-chart {
+		padding: 10px 0;
 	}
-	.easy-pie-chart .label-chart{
-		display:block;
+	.easy-pie-chart .label-chart {
+		display: block;
 	}
 	/*User-profile*/
 	.user-left {
@@ -326,7 +331,7 @@
 		border-right: none;
 		border-left: none;
 		border-bottom: 1px solid #DDDDDD;
-		padding-top:16px;
+		padding-top: 16px;
 	}
 	/***
 	 Footer
@@ -403,13 +408,18 @@
 		position: absolute;
 		width: 225px;
 	}
+	.navbar-collapse.in {
+		overflow-y: visible;
+	}
 	.main-content {
 		margin-left: 225px;
+	}
+	.page-full-width .main-content {
+    	margin-left: 0 !important;
 	}
 	.main-content > .container {
 		min-height: 760px;
 	}
-
 	ul.main-navigation-menu > li.active > a .selected:before {
 		display: block;
 		height: 41px;
@@ -422,6 +432,7 @@
 		line-height: 41px;
 		font-size: 24px;
 	}
+
 	/***
 	 Set style for small navigation menu
 	 ***/
