@@ -1,0 +1,8 @@
+<ul>
+  <% menus.each do |menu, children| %>
+    <li>
+      <%= link_to_unless_current menu.name, '../'+menu.url %>
+      <%= render 'submenu', pages: children if children.present? %>
+    </li>
+  <% end %>
+</ul>

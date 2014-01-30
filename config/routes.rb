@@ -1,8 +1,10 @@
 ProjectnNl::Application.routes.draw do
+  resources :menus
+
   devise_for :users
   resources :tests
   
-  root :to => 'tests#index'
+  root :to => 'menus#index'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

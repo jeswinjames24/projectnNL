@@ -8,9 +8,11 @@
 	<!-- start: HEAD -->
 	<head>
 		<title>ProjectnNl</title>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application","jquery.min.js","jquery-ui-1.10.2.custom.min.js","bootstrap.min.js","jquery.blockUI.js","jquery.icheck.min.js","jquery.mousewheel.js","perfect-scrollbar.js","less-1.5.0.min.js","jquery.cookie.js","bootstrap-colorpalette.js","main.js" %>
+  <%= javascript_include_tag "jquery.min.js","jquery-ui-1.10.2.custom.min.js","jquery.blockUI.js","jquery.icheck.min.js","jquery.mousewheel.js","bootstrap.min.js","perfect-scrollbar.js","less-1.5.0.min.js","jquery.cookie.js","bootstrap-colorpalette.js","main.js","index.js","kendo.all.min.js" %>
   <%= csrf_meta_tags %>
+   
 		<!-- start: META -->
 		<meta charset="utf-8" />
 		<!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
@@ -26,7 +28,7 @@
 		<![endif]-->
 		<!-- end: MAIN CSS -->
 		<!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
-		<link rel="stylesheet" href="assets/plugins/fullcalendar/fullcalendar/fullcalendar.css">
+		
 		<!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
 		<link rel="shortcut icon" href="favicon.ico" />
 	</head>
@@ -285,7 +287,7 @@
 												<a href="javascript:;">
 													<div class="clearfix">
 														<div class="thread-image">
-															<img alt="" src="./assets/images/avatar-2.jpg">
+															<img alt="" src="">
 														</div>
 														<div class="thread-content">
 															<span class="author">Nicole Bell</span>
@@ -299,7 +301,7 @@
 												<a href="javascript:;">
 													<div class="clearfix">
 														<div class="thread-image">
-															<img alt="" src="./assets/images/avatar-1.jpg">
+															<img alt="" src="">
 														</div>
 														<div class="thread-content">
 															<span class="author">Peter Clark</span>
@@ -313,7 +315,7 @@
 												<a href="javascript:;">
 													<div class="clearfix">
 														<div class="thread-image">
-															<img alt="" src="./assets/images/avatar-3.jpg">
+															<img alt="" src="">
 														</div>
 														<div class="thread-content">
 															<span class="author">Steven Thompson</span>
@@ -327,7 +329,7 @@
 												<a href="javascript:;">
 													<div class="clearfix">
 														<div class="thread-image">
-															<img alt="" src="./assets/images/avatar-1.jpg">
+															<img alt="" src="">
 														</div>
 														<div class="thread-content">
 															<span class="author">Peter Clark</span>
@@ -341,7 +343,7 @@
 												<a href="javascript:;">
 													<div class="clearfix">
 														<div class="thread-image">
-															<img alt="" src="./assets/images/avatar-5.jpg">
+															<img alt="" src="">
 														</div>
 														<div class="thread-content">
 															<span class="author">Kenneth Ross</span>
@@ -365,7 +367,7 @@
 						<!-- start: USER DROPDOWN -->
 						<li class="dropdown current-user">
 							<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
-								<img src="assets/images/avatar-1-small.jpg" class="circle-img" alt="">
+								<img src="" class="circle-img" alt="">
 								<span class="username">Peter Clark</span>
 								<i class="clip-chevron-down"></i>
 							</a>
@@ -405,9 +407,14 @@
 					<!-- end: TOP NAVIGATION MENU -->
 				</div>
 				<!-- start: HORIZONTAL MENU -->
+        
 				<div class="horizontal-menu navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li>
+            <%= render 'layouts/navmenu' %>
+
+            
+            
+            <li>
 							<a href="index.html">
 								Dashboard
 							</a>
@@ -590,122 +597,9 @@
 					<!-- start: PAGE HEADER -->
 					<div class="row">
 						<div class="col-sm-12">
-							<!-- start: STYLE SELECTOR BOX -->
-							<div id="style_selector" class="hidden-xs">
-								<div id="style_selector_container" style="display:block">
-									<div class="style-main-title">
-										Style Selector
-									</div>
-									<div class="box-title">
-										Choose Your Layout Style
-									</div>
-									<div class="input-box">
-										<div class="input">
-											<select name="layout">
-												<option value="default">Wide</option><option value="boxed">Boxed</option>
-											</select>
-										</div>
-									</div>
-									<div class="box-title">
-										Choose Your Header Style
-									</div>
-									<div class="input-box">
-										<div class="input">
-											<select name="header">
-												<option value="fixed">Fixed</option><option value="default">Default</option>
-											</select>
-										</div>
-									</div>
-									<div class="box-title">
-										Choose Your Footer Style
-									</div>
-									<div class="input-box">
-										<div class="input">
-											<select name="footer">
-												<option value="default">Default</option><option value="fixed">Fixed</option>
-											</select>
-										</div>
-									</div>
-									<div class="box-title">
-										Backgrounds for Boxed Version
-									</div>
-									<div class="images boxed-patterns">
-										<a id="bg_style_1" href="#"><img alt="" src="assets/images/bg.png"></a>
-										<a id="bg_style_2" href="#"><img alt="" src="assets/images/bg_2.png"></a>
-										<a id="bg_style_3" href="#"><img alt="" src="assets/images/bg_3.png"></a>
-										<a id="bg_style_4" href="#"><img alt="" src="assets/images/bg_4.png"></a>
-										<a id="bg_style_5" href="#"><img alt="" src="assets/images/bg_5.png"></a>
-									</div>
-									<div class="box-title">
-										5 Predefined Color Schemes
-									</div>
-									<div class="images icons-color">
-										<a id="light" href="#"><img class="active" alt="" src="assets/images/lightgrey.png"></a>
-										<a id="dark" href="#"><img alt="" src="assets/images/darkgrey.png"></a>
-										<a id="black_and_white" href="#"><img alt="" src="assets/images/blackandwhite.png"></a>
-										<a id="navy" href="#"><img alt="" src="assets/images/navy.png"></a>
-										<a id="green" href="#"><img alt="" src="assets/images/green.png"></a>
-									</div>
-									<div class="box-title">
-										Style it with LESS
-									</div>
-									<div class="images">
-										<div class="form-group">
-											<label>
-												Basic
-											</label>
-											<input type="text" value="#ffffff" class="color-base">
-											<div class="dropdown">
-												<a class="add-on dropdown-toggle" data-toggle="dropdown"><i style="background-color: #ffffff"></i></a>
-												<ul class="dropdown-menu pull-right">
-													<li>
-														<div class="colorpalette"></div>
-													</li>
-												</ul>
-											</div>
-										</div>
-										<div class="form-group">
-											<label>
-												Text
-											</label>
-											<input type="text" value="#555555" class="color-text">
-											<div class="dropdown">
-												<a class="add-on dropdown-toggle" data-toggle="dropdown"><i style="background-color: #555555"></i></a>
-												<ul class="dropdown-menu pull-right">
-													<li>
-														<div class="colorpalette"></div>
-													</li>
-												</ul>
-											</div>
-										</div>
-										<div class="form-group">
-											<label>
-												Elements
-											</label>
-											<input type="text" value="#007AFF" class="color-badge">
-											<div class="dropdown">
-												<a class="add-on dropdown-toggle" data-toggle="dropdown"><i style="background-color: #007AFF"></i></a>
-												<ul class="dropdown-menu pull-right">
-													<li>
-														<div class="colorpalette"></div>
-													</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-									<div style="height:25px;line-height:25px; text-align: center">
-										<a class="clear_style" href="#">
-											Clear Styles
-										</a>
-										<a class="save_style" href="#">
-											Save Styles
-										</a>
-									</div>
-								</div>
-								<div class="style-toggle open"></div>
-							</div>
-							<!-- end: STYLE SELECTOR BOX -->
+						
 							<!-- start: PAGE TITLE & BREADCRUMB -->
+             
 							<ol class="breadcrumb">
 								<li>
 									<i class="clip-home-3"></i>
@@ -953,7 +847,7 @@
 										</thead>
 										<tbody>
 											<tr>
-												<td class="center"><img src="assets/images/avatar-1.jpg" alt="image"/></td>
+												<td class="center"><img src="" alt="image"/></td>
 												<td>Peter Clark</td>
 												<td class="hidden-xs">
 												<a href="#" rel="nofollow" target="_blank">
@@ -986,7 +880,7 @@
 												</div></td>
 											</tr>
 											<tr>
-												<td class="center"><img src="assets/images/avatar-2.jpg" alt="image"/></td>
+												<td class="center"><img src="" alt="image"/></td>
 												<td>Nicole Bell</td>
 												<td class="hidden-xs">
 												<a href="#" rel="nofollow" target="_blank">
@@ -1019,7 +913,7 @@
 												</div></td>
 											</tr>
 											<tr>
-												<td class="center"><img src="assets/images/avatar-3.jpg" alt="image"/></td>
+												<td class="center"><img src="" alt="image"/></td>
 												<td>Steven Thompson</td>
 												<td class="hidden-xs">
 												<a href="#" rel="nofollow" target="_blank">
@@ -1052,7 +946,7 @@
 												</div></td>
 											</tr>
 											<tr>
-												<td class="center"><img src="assets/images/avatar-5.jpg" alt="image"/></td>
+												<td class="center"><img src="" alt="image"/></td>
 												<td>Kenneth Ross</td>
 												<td class="hidden-xs">
 												<a href="#" rel="nofollow" target="_blank">
@@ -1085,7 +979,7 @@
 												</div></td>
 											</tr>
 											<tr>
-												<td class="center"><img src="assets/images/avatar-4.jpg" alt="image"/></td>
+												<td class="center"><img src="" alt="image"/></td>
 												<td>Ella Patterson</td>
 												<td class="hidden-xs">
 												<a href="#" rel="nofollow" target="_blank">
@@ -1281,7 +1175,7 @@
 											<ol class="discussion">
 												<li class="other">
 													<div class="avatar">
-														<img alt="" src="assets/images/avatar-4.jpg">
+														<img alt="" src="">
 													</div>
 													<div class="messages">
 														<p>
@@ -1292,7 +1186,7 @@
 												</li>
 												<li class="self">
 													<div class="avatar">
-														<img alt="" src="assets/images/avatar-1.jpg">
+														<img alt="" src="">
 													</div>
 													<div class="messages">
 														<p>
@@ -1303,7 +1197,7 @@
 												</li>
 												<li class="other">
 													<div class="avatar">
-														<img alt="" src="assets/images/avatar-3.jpg">
+														<img alt="" src="">
 													</div>
 													<div class="messages">
 														<p>
@@ -1313,7 +1207,7 @@
 												</li>
 												<li class="self">
 													<div class="avatar">
-														<img alt="" src="assets/images/avatar-1.jpg">
+														<img alt="" src="">
 													</div>
 													<div class="messages">
 														<p>
@@ -1323,7 +1217,7 @@
 												</li>
 												<li class="other">
 													<div class="avatar">
-														<img alt="" src="assets/images/avatar-4.jpg">
+														<img alt="" src="">
 													</div>
 													<div class="messages">
 														<p>
@@ -1396,7 +1290,7 @@
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<![endif]-->
 		<!--[if gte IE 9]><!-->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		
 		<!--<![endif]-->
 		
 		<!-- end: MAIN JAVASCRIPTS -->
@@ -1406,8 +1300,8 @@
 		<script>
 			jQuery(document).ready(function() {
 				Main.init();
-				Index.init();
-			});
+        //Index.init();
+      });
 		</script>
 	</body>
 	<!-- end: BODY -->

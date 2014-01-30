@@ -1,27 +1,63 @@
-<h1>Listing tests</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    
+        <div id="example" class="k-content">
+            <div id="grid"></div>
+            <script>
+                $(document).ready(function() {
+                    $("#grid").kendoGrid({
+                        dataSource: {
+                            type: "json",
+                            transport: {
+                                read: "../../menus.json"
+                            },
+                            schema: {
+                                model: {
+                                    fields: {
+                                        name: { type: "string" },
+                                        url: { type: "string" },
+                                        desc: { type: "string" },
+                                        ancestry: { type: "string" }
+                                    }
+                                }
+                            },
+                            pageSize: 20,
+                            serverPaging: true,
+                            serverFiltering: true,
+                            serverSorting: true
+                        },
+                        height: 430,
+                        filterable: true,
+                        sortable: true,
+                        pageable: true,
+                        columns: [{
+                                field:"name",
+                                filterable: false
+                            },
+                           
+                            {
+                                field: "name",
+                                title: "Name",
+                                width: 120
+                            }, {
+                                field: "url",
+                                title: "url",
+                                width: 260
+                            }, {
+                                field: "desc",
+                                title: "Description",
+                                width: 150
+                            }
+                        ]
+                    });
+                });
+            </script>
+        </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Testitem</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @tests.each do |test| %>
-      <tr>
-        <td><%= test.testItem %></td>
-        <td><%= link_to 'Show', test %></td>
-        <td><%= link_to 'Edit', edit_test_path(test) %></td>
-        <td><%= link_to 'Destroy', test, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Test', new_test_path %>
+</body>
+</html>
